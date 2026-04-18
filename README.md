@@ -10,8 +10,6 @@ Observed behavior across runs:
 - DUJ: bounded invariant, stable
 - No_orbit_band: matches DUJ in current regime
 
-Nano-scale test harness demonstrating bounded vs divergent dynamics under noise in a constraint-enforced update rule.
-
 ## Quick Start
 
 ```bash
