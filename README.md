@@ -4,12 +4,22 @@ Nano-scale test harness demonstrating bounded vs divergent dynamics under noise 
 
 ## Results summary
 
-Observed behavior across runs:
+Observed behavior across runs (noise_scale=0.05, steps=320, state_dim=8192):
+All runs use identical initialization seeds across modes to ensure direct comparability, unless otherwise specified.
 
-- Control: divergence (violations explode)
-- DUJ: bounded invariant, stable
-- No_orbit_band: matches DUJ in current regime
+- **Control**: rapid divergence — violation count grows exponentially, indicating an unstable regime under stochastic forcing.
 
+- **DUJ (constraint-enforced)**: bounded behavior — violation count remains at zero across all tested steps, indicating preservation of a viable state region.
+
+- **No_orbit_band (ablation)**: remains bounded in the current regime, suggesting that the primary stabilizing effect is not solely dependent on orbit-band structure.
+
+**Key observation:**
+Under identical noise and initialization, the system exhibits a clear regime shift:
+- unconstrained → divergent
+- constrained → bounded
+
+This indicates that the update rule enforces a structural constraint that prevents trajectory escape under stochastic perturbation.
+ 
 ## Quick Start
 
 ```bash
